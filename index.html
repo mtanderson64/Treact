@@ -20,9 +20,32 @@
                     <figure>
                         <img src="./assets/logo--dark.svg" alt="">
                     </figure>
-                    <p class="logo__text">Treact</p>
+                    <p class="nav__logo__text">Treact</p>
                 </div>
-                <!--  -->Enter Nav Links here<!--  -->
+                <div class="nav__groups">
+                    <ul class="nav__links">
+                        <li>
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li>
+                            <a class="nav__link">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#pricing" class="nav__link">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="#start" class="nav__link">Contact Us</a>
+                        </li>
+                    </ul>
+                    <ul class="sign-up__log-in">
+                        <li>
+                            <a class="nav__link">Login</a>
+                        </li>
+                        <li>
+                            <button class="button--standard">Sign Up</button>
+                        </li>
+                    </ul>
+                </div>
                 <button class="btn__menu" onclick="openMenu()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -44,18 +67,29 @@
                 </svg>
             </button>
             <div class="modal__links">
-                <a class="modal__link">About</a>
-                <a class="modal__link">Blog</a>
-                <a class="modal__link">Pricing</a>
-                <a class="modal__link">Contact Us</a>
-                <a class="modal__link">Login</a>
-                <a class="modal__link modal__link--primary">Sign Up</a>
+                <a href="#about" class="modal__link">About</a>
+                <a  class="modal__link">Blog</a>
+                <a href="#pricing" class="modal__link">Pricing</a>
+                <a href="#start" class="modal__link">Contact Us</a>
+                <a  class="modal__link">Login</a>
+                <a  class="modal__link modal__link--primary">Sign Up</a>
             </div>
         </div>
         <header>
-            <div class="container">
+            <div class="container" id="about">
                 <div class="row">
-                    <!--  -->Enter Header / About Us Section<!--  -->
+                    <div class="header--left">
+                        <h1>Beautiful React Templates <span class="purple">for you.</span></h1>
+                        <p class="header__para">Our templates are easy to setup, understand and customize. Fully modular components with a variety of pages and components.</p>
+                        <form class="header__form">
+                            <input type="text">
+                            <button class="button--standard">Get Started</button>
+                        </form>
+                    </div>
+                    <div class="header--right">
+
+                    </div>
+                </div>
             </div>
         </header>
     </section>

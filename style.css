@@ -6,11 +6,22 @@
     box-sizing: border-box;
     font-family: 'Inter', system-ui;
     color: #243e63;
+    scroll-behavior: smooth;
 }
 
 body {
     max-width: 100vw;
     overflow-x: hidden;
+}
+
+h1 {
+    color: #242424;
+    line-height: 1.3;
+    font-size: 36px;
+}
+
+p {
+    line-height: 1.5;
 }
 
 .row {
@@ -58,6 +69,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 3vw;
 }
 
 .nav__logo {
@@ -74,18 +86,59 @@ nav {
     height: 48px;
 }
 
-.logo__text {
-    font-size: 24px;
+.nav__logo__text {
+    font-size: 28px;
     font-weight: 900;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
 }
 
+.nav__groups {
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    gap: 72px;
+}
+
+.nav__links, .sign-up__log-in{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+.nav__links {
+    gap: 40px;
+}
+
+.nav__link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sign-up__log-in {
+    gap: 24px;
+}
+
+.sign-up__log-in li {
+    cursor: pointer;
+}
+
+.button--standard {
+    padding: 14px 36px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 32px;
+    color: white;
+    border: none;
+    background-color: #6415ff;
+    cursor: pointer;
+}
 
 .btn__menu {
     display: none;
     background: transparent;
     border: none;
     transition: all 300ms ease;
+    cursor: pointer;
 }
 
 .btn__menu--svg:hover {
@@ -160,8 +213,33 @@ header .row {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
+.header--left {
+    display: flex;
+    box-sizing: border-box;
+    width: 40%;
+    flex-direction: column;
+    padding: 0 0 0 3vw;
+    gap: 24px;
+}
+
+.header__para {
+    font-size: 16px;
+}
+
+.header--left form {
+    border: 2px solid #1a202c;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 40px;
+}
+
+.header--right {
+    width: 60%;
+}
 
 /* 
 
@@ -291,6 +369,10 @@ MOBILE RESPONSIVENESS ↓
 }
 
 @media (max-width: 1024px) {
+
+    .nav__groups {
+        display: none;
+    }
 
     .btn__menu {
         display: block;
