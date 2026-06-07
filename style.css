@@ -107,12 +107,13 @@ nav {
 }
 
 .nav__links {
-    gap: 40px;
+    gap: 48px;
 }
 
 .nav__link {
     text-decoration: none;
     cursor: pointer;
+    position: relative;
 }
 
 .sign-up__log-in {
@@ -121,6 +122,22 @@ nav {
 
 .sign-up__log-in li {
     cursor: pointer;
+}
+
+.link__hover-effect:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #6415ff;
+    width: 100%;
+    bottom: -6px;
+    right: 0;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.link__hover-effect:hover:after {
+    opacity: 1;
 }
 
 .sign-up__log-in button {
@@ -138,6 +155,11 @@ nav {
     border: none;
     background-color: #6415ff;
     cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.button--standard:hover {
+    background-color: #3c0d99;
 }
 
 .btn__menu {
@@ -220,7 +242,7 @@ HEADER / ABOUT US ↓
 header .row {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .header--left {
@@ -239,28 +261,53 @@ header .row {
     width: 100%;
     max-width: 448px;
     position: relative;
+    margin-bottom: 48px;
 }
 
 .header__form input {
-    flex-grow: 1;
     font-size: 16px;
-    padding: 20px 185px 20px 20px;
+    font-weight: 500;
+    padding: 20px 185px 20px 28px;
     border-radius: 40px;
     border: 2px solid #e5e7eb;
+    width: 100%;
+    color: #243e63;
+    transition: all 300ms ease;
 }
 
-.header__form input:active {
-    border:#6415ff;
+.header__form input::placeholder {
+    color: #98a1af;
+}
+
+.header__form input:focus {
+    outline: none;
+    border-color:#6415ff;
 }
 
 .header__form button {
     position: absolute;
     right: 8px;
     top: 8px;
+    width: 162px;
+}
+
+.header__subtitle {
+    text-transform: uppercase;
+    color: #a0aec0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.header--left img {
+    opacity: 0.5;
+    width: 30vw;
+    max-width: 80%;
 }
 
 .header--right {
+    display: flex;
     width: 60%;
+    justify-content: flex-end;
 }
 
 .header--right img {
@@ -397,6 +444,14 @@ MOBILE RESPONSIVENESS ↓
     p {
         font-size: 16px;
     }
+
+    header .row {
+    align-items: flex-end;
+    }
+
+    .header--right img {
+    max-width: 512px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -414,19 +469,35 @@ MOBILE RESPONSIVENESS ↓
     }
     .header--left {
         width: 100%;
-        max-width: 560px;
+        max-width: 512px;
         padding: 0;
         align-items: center;
         text-align: center;
+    }
+
+    .header--right {
+        width: 100%;
+        justify-content: center;
+        margin-top: 48px;
     }
 
     h1 {
         font-size: 30px;
     }
 
+    .header__form {
+        margin-bottom: 28px;
+    }
+
     .header__form input {
         flex-grow: 1;
     }
+
+    .header--left img {
+        width: 100%;
+        max-width: 100%;
+    }
+
     footer {
         padding: 80px 32px;
     }
@@ -464,10 +535,12 @@ MOBILE RESPONSIVENESS ↓
 
     .header__form {
         gap: 16px;
+        align-items: center;
+        justify-content: center;
     }
 
     .header__form input {
-        padding: 20px;
+        padding: 20px 28px;
     }
     .header__form button {
         padding: 20px;
